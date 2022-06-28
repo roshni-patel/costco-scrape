@@ -39,6 +39,7 @@ def load_data(webdriver):
 
         #turns the html into an object to use with BeautifulSoup library
         soup = BeautifulSoup(innerHTML, "html.parser")
+        print(soup)
 
         extract_and_load_all_data(soup)
 
@@ -59,6 +60,7 @@ def quit_driver(webdriver):
 # gets the seo meta tags
 def get_meta_tags(soup):
     meta_tags = [tags.get('name') + " is " + tags.get('content') for tags in soup.find_all('meta')[4:9]]
+    print(meta_tags)
     return meta_tags
 
 # gets the product name
